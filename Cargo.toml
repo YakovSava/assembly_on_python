@@ -1,0 +1,14 @@
+[package]
+name = "mylib_wrapper"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "mylib_wrapper"
+# ключевой момент — создаём динамическую библиотеку для Python
+crate-type = ["cdylib"]
+
+[dependencies]
+libloading = "0.8"
+pyo3 = { version = "0.17", features = ["extension-module"] }
+
